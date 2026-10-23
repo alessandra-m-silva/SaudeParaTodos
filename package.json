@@ -1,0 +1,23 @@
+{
+  "name": "saudeparatodos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alessandra-m-silva/SaudeParaTodos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alessandra-m-silva/SaudeParaTodos/issues"
+  },
+  "homepage": "https://github.com/alessandra-m-silva/SaudeParaTodos#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
