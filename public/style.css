@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('../fonts/OpenDyslexic-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Base e Cores da Paleta */
+:root {
+    --color-dark-navy: #132043;
+    --color-primary-blue: #1F4172;
+    --color-soft-pink: #F1B4BB;
+    --color-light-bg: #FDF0F0;
+    --color-text: #132043;
+    --color-white: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-light-bg);
+    color: var(--color-text);
+}
+
+/* Estilização da Navegação */
+nav {
+    background-color: var(--color-dark-navy);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between; /* Empurra o "Início" para a esquerda e o ".nav-right" para a direita */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Grupo de links alinhados à direita */
+.nav-right {
+    display: flex;
+    gap: 20px; /* Espaçamento entre Cadastrar e Entrar */
+}
+
+nav a {
+    color: var(--color-light-bg);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--color-soft-pink);
+    text-decoration: none;
+}
+
+/* Estilização das Páginas */
+.page {
+    display: none; /* Esconde todas as páginas por padrão */
+    padding: 40px 20px;
+}
+
+/* Apenas a página com a classe 'active' será exibida */
+.page.active {
+    display: block;
+}
+
+/* Containers de Formulários (Login / Cadastro) */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(19, 32, 67, 0.08);
+    border: 1px solid var(--color-soft-pink);
+}
+
+form h2 {
+    color: var(--color-dark-navy);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Agrupamentos (Fieldsets e Legendas) */
+fieldset {
+    border: 1px solid var(--color-soft-pink);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: var(--color-light-bg);
+}
+
+legend {
+    color: var(--color-primary-blue);
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.field-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-dark-navy);
+    font-size: 0.95rem;
+}
+
+/* Campos de Entrada (Inputs, Selects) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    color: var(--color-dark-navy);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-primary-blue);
+    box-shadow: 0 0 0 3px rgba(31, 65, 114, 0.2);
+}
+
+/* Grupo de Checkbox */
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary-blue);
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+small {
+    color: #666;
+    font-size: 0.825rem;
+    margin-top: 4px;
+}
+
+/* Botões */
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-dark-navy);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.99);
+}
+
+/* Links Auxiliares dos Formulários */
+form a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--color-primary-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+form a:hover {
+    text-decoration: underline;
+    color: var(--color-dark-navy);
+}

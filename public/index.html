@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcessaSaúde</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <a onclick="showPage('home')">Início</a>
+        <div class="nav-right">
+            <a onclick="showPage('cadastro')">Cadastrar</a>
+            <a onclick="showPage('login')">Entrar</a>
+        </div>
+    </nav>
+
+    <!--paginas-->
+    <div id="home" class="page active">
+        <!--apresentação do meu projeto-->
+    </div>
+
+    <div id="cadastro" class="page">
+        <div class="container" id="container-cadastro">
+            <form id="form-cadastro" action="/AcessaSaude/Cadastro" method="post" aria-labelledby="titulo-cadastro">
+                <h2 id="titulo-cadastro">Cadastro no AcessaSaúde</h2>
+                <!--dados pessoais-->
+                <fieldset>
+                    <legend>Dados de Acesso e Identificação</legend>
+
+                    <div class="field-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Ex: Maria Silva" autocomplete="name">
+                    </div>
+                    <div class="field-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" name="cpf" id="cpf" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" autocomplete="off" required>
+                    </div>
+                    <div class="field-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required placeholder="exemplo@gmail.com" autocomplete="email">
+                    </div>
+                    <div class="field-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required minlength="8" placeholder="Mínimo 8 caracteres" aria-describedby="dica-senha">
+                        <small id="dica-senha">A senha deve conter no mínimo 8 caracteres</small>
+                    </div>
+                    <div class="field-group">
+                        <label for="telefone">Telefone / WhatsApp (opcional):</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 000000-0000" autocomplete="tel">
+                    </div>
+                </fieldset>
+
+                <!--preferencias de acessibilidade-->
+                <fieldset>
+                    <legend>Preferências de Acessibilidade</legend>
+
+                    <div class="field-group">
+                        <label for="tamanho_fonte">Tamanho do Texto:</label>
+                        <select name="tamanho_fonte" id="tamanho_fonte">
+                            <option value="padrao">Padrão</option>
+                            <option value="grande">Grande</option>
+                            <option value="extra-grande">Extra Grande</option>
+                        </select>
+                    </div>
+                    <div class="field-group">
+                        <label for="tema_visual">Tema Visual:</label>
+                        <select name="tema_visual" id="tema_visual">
+                            <option value="padrao">Padrão (Claro)</option>
+                            <option value="escuro">Escuro</option>
+                            <option value="alto-contraste">Alto Contraste</option>
+                        </select>
+                    </div>
+                    <div class="field-group checkbox-group">
+                        <input type="checkbox" id="fonte_dislexia" name="fonte_dislexia" value="true">
+                        <label for="fonte_dislexia">Usar fonte amigável para Dislexia (OpenDyslexic)</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" id="btn-cadastrar">Criar Minha Conta</button>
+                <a onclick="showPage('login')">Já possui cadastro? Clique aqui para fazer login!</a>
+            </form>
+        </div>
+    </div>
+
+    <div id="login" class="page">
+        <div class="container" id="container-login">
+            <form id="form-login" action="/AcessaSaude/Login" method="post" aria-labelledby="titulo-login">
+                <h2 id="titulo-login">Entrar no AcessaSaúde</h2>
+                <input type="email" name="email-login" id="email-login" required placeholder="Informe o Email">
+                <input type="password" name="senha-login" id="senha-login" required placeholder="Informe a Senha"> 
+
+                <button type="submit">Entrar</button>
+                <a onclick="showPage('cadastro')">Não tem conta? Clique aqui para se cadastrar!</a>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard" class="page">
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

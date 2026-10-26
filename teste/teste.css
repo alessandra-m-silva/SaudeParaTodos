@@ -1,0 +1,308 @@
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('../fonts/OpenDyslexic-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* --- VARIÁVEIS DE COR E TEMAS --- */
+:root {
+    --color-dark-navy: #132043;
+    --color-primary-blue: #1F4172;
+    --color-soft-pink: #F1B4BB;
+    --color-light-bg: #FDF0F0;
+    --color-card-bg: #ffffff;
+    --color-text: #132043;
+    --color-border: #F1B4BB;
+    --color-focus: #ffbf47;
+    --font-base-size: 16px;
+    --font-family: Arial, sans-serif;
+}
+
+/* Modo Escuro */
+body.theme-dark {
+    --color-dark-navy: #0f172a;
+    --color-primary-blue: #3b82f6;
+    --color-soft-pink: #1e293b;
+    --color-light-bg: #090d16;
+    --color-card-bg: #1e293b;
+    --color-text: #f8fafc;
+    --color-border: #334155;
+}
+
+/* Modo Alto Contraste */
+body.theme-high-contrast {
+    --color-dark-navy: #000000;
+    --color-primary-blue: #ffff00;
+    --color-soft-pink: #ffffff;
+    --color-light-bg: #000000;
+    --color-card-bg: #000000;
+    --color-text: #ffffff;
+    --color-border: #ffffff;
+    --color-focus: #ffff00;
+}
+
+body.theme-high-contrast button,
+body.theme-high-contrast input,
+body.theme-high-contrast select {
+    border: 2px solid #ffffff !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.theme-high-contrast .btn-primary {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+/* Fonte para Dislexia */
+body.font-dyslexic {
+    font-family: 'OpenDyslexic', Arial, sans-serif !important;
+    letter-spacing: 0.05em;
+    word-spacing: 0.1em;
+}
+
+/* Reset Geral */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--font-base-size);
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-light-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+/* --- FOCO VISÍVEL PARA NAVEGAÇÃO VIA TECLADO --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 4px solid var(--color-focus) !important;
+    outline-offset: 2px;
+}
+
+/* --- BARRA DE ACESSIBILIDADE FIXA --- */
+.accessibility-bar {
+    background-color: var(--color-dark-navy);
+    color: #ffffff;
+    padding: 8px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.acc-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.accessibility-bar button {
+    background-color: var(--color-primary-blue);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.accessibility-bar button:hover {
+    filter: brightness(1.2);
+}
+
+/* --- NAVEGAÇÃO PRINCIPAL --- */
+nav {
+    background-color: var(--color-dark-navy);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: var(--color-soft-pink);
+}
+
+/* --- ESTRUTURA DE PÁGINAS --- */
+.page {
+    display: none;
+    padding: 30px 20px;
+}
+
+.page.active {
+    display: block;
+}
+
+/* --- COMPONENTES DO DASHBOARD --- */
+.dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.dash-header h1 {
+    margin: 0 0 5px 0;
+    color: var(--color-primary-blue);
+}
+
+.dash-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.dash-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-primary-blue);
+    font-size: 1.3rem;
+}
+
+/* FORMULÁRIO DE AGENDAMENTO (GRID) */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-group label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+/* TABELA DE AGENDAMENTOS */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table th, 
+.data-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.data-table th {
+    background-color: var(--color-light-bg);
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+/* BADGES E BOTÕES DA TABELA */
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.badge-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.badge-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.btn-primary {
+    background-color: var(--color-primary-blue);
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #991b1b;
+}
+
+/* SEÇÃO DE NOTÍCIAS */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.news-item {
+    border-left: 4px solid var(--color-primary-blue);
+    background-color: var(--color-light-bg);
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+.news-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+}
+
+.news-date {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
